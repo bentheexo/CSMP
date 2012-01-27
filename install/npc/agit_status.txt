@@ -1,0 +1,25 @@
+//===== eAthena Script =======================================
+//= Agit Status Checker
+//===== By: ==================================================
+//= Entwined
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= eAthena SVN (SQL only)
+//===== Description: =========================================
+//= Updates WoE status, so CeresCP can display 
+//= if WoE is on or off in real time.
+//===== Additional Comments: =================================
+//= Run this SQL query:
+//= ALTER TABLE `ragsrvinfo` ADD `agit_status` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `drop`;
+//============================================================
+
+-	script	AGIT_STATUS	-1,{
+OnAgitStart:
+OnAgitStart2:
+OnAgitEnd:
+OnAgitEnd2:
+OnInit:
+	query_sql "UPDATE ragsrvinfo SET agit_status = " + (agitcheck() || agitcheck2());
+	end;
+}

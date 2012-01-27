@@ -10,7 +10,7 @@ include_once 'functions.php';
 		if (!isset($GET_opt)) {
 			opentable($lang['LADDER_TOP100']);
 			echo "
-			<table width=\"70%\">
+			<table width=\"490\">
 			<tr>
 				<td align=center>
 				<form id=\"ladder\">
@@ -78,7 +78,7 @@ include_once 'functions.php';
 
 		$result = execute_query($query, "ladder.php");
 		echo "
-		<table width=\"500\">
+		<table width=\"490\">
 		<tr>
 			<td align=\"right\" class=\"head\">".$lang['POS']."</td>
 			<td>&nbsp;</td>

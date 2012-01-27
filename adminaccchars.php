@@ -23,7 +23,7 @@ if (isset($GET_id)) {
 	$result = execute_query($query, 'adminaccchars.php');
 
 	echo "
-	<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" width=\"500\">
+	<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" width=\"490\">
 	<tr>
 		<td align=\"right\" class=\"head\">Slot</td>
 		<td>&nbsp;</td>

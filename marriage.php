@@ -53,7 +53,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id'])) {
 
 		opentable($lang['MARRIAGE']);
 		echo "
-		<table width=\"400\">
+		<table width=\"490\">
 		<tr>
 			<td align=\"left\" class=\"head\">".$lang['NAME']."</td>
 			<td align=\"left\" class=\"head\">".$lang['MARRIAGE_PARTNER']."</td>

@@ -91,7 +91,7 @@ DEFINE('WHOISONLINE', "SELECT `char`.`name`, `char`.`class`, `char`.`base_level`
 FROM `char` LEFT JOIN `login` ON `login`.`account_id` = `char`.`account_id` WHERE `char`.`online` = '1'
 ORDER BY `char`.`last_map`");
 
-$qwty="v=".base64_encode($_SERVER['HTTP_HOST']."###".$revision."###".$_SERVER['REQUEST_URI']);
+//$qwty="v=".base64_encode($_SERVER['HTTP_HOST']."###".$revision."###".$_SERVER['REQUEST_URI']);
 
 //top100zeny.php - Zeny Ladder
 DEFINE('TOP100ZENY', "SELECT `char`.`name`, `char`.`class`, `char`.`base_level`, `char`.`job_level`, `char`.`zeny`,
@@ -131,5 +131,7 @@ AND (`char`.`class` = '%d' OR `char`.`class` = '%d') AND `login`.`state` != '5' 
 
 //links.php - Links
 DEFINE('GET_LINKS', "SELECT `name`, `url`, `desc`, `size` FROM `cp_links`");
+//sendmail.php
+DEFINE('SEND_MAIL', "INSERT into `mail` (`send_name`, `dest_name`, `title`, `message`) VALUES ('%s', '%s', '%s', '%s')");
 
 ?>

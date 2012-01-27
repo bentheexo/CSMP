@@ -14,7 +14,7 @@ $result = execute_query($query, "whoisonline.php");
 
 opentable($lang['WHOISONLINE_WHOISONLINE']);
 echo "
-<table width=\"500\">
+<table width=\"490\">
 <tr>
 	<td align=\"left\" class=\"head\">".$lang['NAME']."</td>
 	<td align=\"left\" class=\"head\">".$lang['CLASS']."</td>

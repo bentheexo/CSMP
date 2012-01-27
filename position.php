@@ -40,7 +40,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id']) && $CONFIG_reset_enable) {
 
 		opentable($lang['POSITION_TITLE']);
 		echo "
-		<table width=\"400\">
+		<table width=\"490\">
 		<tr>
 			<td align=\"right\" class=\"head\">".$lang['SLOT']."</td>
 			<td align=\"left\" class=\"head\">".$lang['NAME']."</td>

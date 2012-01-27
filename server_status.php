@@ -21,30 +21,30 @@ if ($CONFIG_dynamic_info || $CONFIG_agit_check) {
 	$rate_drop = moneyformat($line[2] / 100);
 	if(isset($line[3])) {
 		if ($line[3] == 1)
-			$agit_status = "<font color=\"green\">".$lang['AGIT_ON']."</font>";
+			$agit_status = "<font color=\"yellow\">".$lang['AGIT_ON']."</font>";
 		else
-			$agit_status = "<font color=\"red\">".$lang['AGIT_OFF']."</font>";
+			$agit_status = "<font color=\"#fb4e00\">".$lang['AGIT_OFF']."</font>";
 	}
 }
 
 
 opentable($CONFIG_name);
 
-echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">";
+echo "<table>";
 if ($servers & 1) 
-	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_LOGIN']."&nbsp;</b></td><td> <font color=\"green\">".$lang['SERVERSTATUS_ONLINE']."</font></td></td></tr>";
+	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_LOGIN']."&nbsp;</b></td><td> <font color=\"yellow\">".$lang['SERVERSTATUS_ONLINE']."</font></td></td></tr>";
 else 
-	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_LOGIN']."&nbsp;</b></td><td> <font color=\"red\">".$lang['SERVERSTATUS_OFFLINE']."</font></td></td></tr>";
+	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_LOGIN']."&nbsp;</b></td><td> <font color=\"#fb4e00\">".$lang['SERVERSTATUS_OFFLINE']."</font></td></td></tr>";
 
 if ($servers & 2)
-	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_CHAR']."&nbsp;</b></td><td> <font color=\"green\">".$lang['SERVERSTATUS_ONLINE']."</font></td></td></tr>";
+	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_CHAR']."&nbsp;</b></td><td> <font color=\"yellow\">".$lang['SERVERSTATUS_ONLINE']."</font></td></td></tr>";
 else
-	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_CHAR']."&nbsp;</b></td><td> <font color=\"red\">".$lang['SERVERSTATUS_OFFLINE']."</font></td></td></tr>";
+	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_CHAR']."&nbsp;</b></td><td> <font color=\"#fb4e00\">".$lang['SERVERSTATUS_OFFLINE']."</font></td></td></tr>";
 
 if ($servers & 4) 
-	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_MAP']."&nbsp;</b></td><td> <font color=\"green\">".$lang['SERVERSTATUS_ONLINE']."</font></td></td></tr>";
+	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_MAP']."&nbsp;</b></td><td> <font color=\"yellow\">".$lang['SERVERSTATUS_ONLINE']."</font></td></td></tr>";
 else
-	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_MAP']."&nbsp;</b></td><td> <font color=\"red\">".$lang['SERVERSTATUS_OFFLINE']."</font></td></tr>";
+	echo "<tr><td align=\"left\"><b>".$lang['SERVERSTATUS_MAP']."&nbsp;</b></td><td> <font color=\"#fb4e00\">".$lang['SERVERSTATUS_OFFLINE']."</font></td></tr>";
 
 if ($CONFIG_show_rates) {
 	if ($CONFIG_dynamic_info)

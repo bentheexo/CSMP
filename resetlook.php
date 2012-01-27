@@ -54,7 +54,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id']) && $CONFIG_reset_enable) {
 
 		opentable($lang['RESETLOOK_RESETLOOK']);
 		echo "
-		<table width=\"595\">
+		<table width=\"490\">
 		<tr>
 			<td align=\"right\" class=\"head\">".$lang['SLOT']."</td>
 			<td align=\"left\" class=\"head\">".$lang['NAME']."</td>

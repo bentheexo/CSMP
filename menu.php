@@ -109,6 +109,9 @@ $submenu[16][2] = 6;
 //$submenu[17][1] = "";
 //$submenu[17][2] = 6;
 
+$submenu[17][0] = "Send In-Game Mail";
+$submenu[17][1] = "sendmail.php";
+$submenu[17][2] = 1;
 
 $pos = 0;
 $menu = "var mainmenu = new Array(";

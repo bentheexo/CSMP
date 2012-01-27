@@ -57,7 +57,7 @@ if (isset($GET_id)) {
 	if ($line = $result->fetch_row()) {
 		echo "
 		<form id=\"accban\" onSubmit=\"return GET_ajax('adminaccban.php','accounts_div','accban');\">
-			<table width=\"500\">
+			<table width=\"490\">
 				<tr>
 					<td align=\"right\">Account_id:</td><td align=\"left\">$line[0]<input type=\"hidden\" name=\"id\" value=\"$line[0]\"></td>
 				</tr><tr>

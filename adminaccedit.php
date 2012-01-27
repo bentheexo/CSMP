@@ -47,7 +47,7 @@ if (isset($GET_id)) {
 		$sex = $line[2];
 		echo "
 		<form id=\"accedit\" onSubmit=\"return GET_ajax('adminaccedit.php','accounts_div','accedit');\">
-			<table width=\"500\">
+			<table width=\"490\">
 				<tr>
 					<td align=\"right\">Account_id</td><td align=\"left\">$line[0]<input type=\"hidden\" name=\"id\" value=\"$line[0]\"></td>
 				</tr><tr>

@@ -340,7 +340,7 @@ if (isset($GET_id) && !notnumber($GET_id)) {
 
 } else echo "Not Found";
 
-echo "<table width=\"500\"><tr><td align=\"center\"><span title=\"Close this window\" onClick=\"window.close();\"><b>CLOSE</b></span></td></tr></table>";
+echo "<table width=\"490\"><tr><td align=\"center\"><span title=\"Close this window\" onClick=\"window.close();\"><b>CLOSE</b></span></td></tr></table>";
 
 closetable();
 echo "</body></html>";

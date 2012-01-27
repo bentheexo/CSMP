@@ -11,7 +11,7 @@ $result = execute_query($query, "top100zeny.php");
 
 opentable($lang['TOP100ZENY_TOP100ZENY']);
 echo "
-<table width=\"400\">
+<table width=\"490\">
 <tr>
 	<td align=\"right\" class=\"head\">".$lang['POS']."</td>
 	<td>&nbsp;</td>

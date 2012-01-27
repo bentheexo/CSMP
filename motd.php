@@ -6,9 +6,10 @@ include_once 'functions.php';
 
 opentable($lang['NEWS_MESSAGE']);
 ?>
-<table width="504">
+<center>
+<table width="490"><tr><td>
 This is the CSMP, Complete Server Management Panel. It will be finished for full use as soon as possible.
-</table>
+</td></tr></table></center>
 <?php
 closetable();
 fim();

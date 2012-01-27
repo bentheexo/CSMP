@@ -41,7 +41,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id']) && $CONFIG_set_slot) {
 
 		opentable($lang['SLOT_CHANGE_SLOT']);
 		echo "
-		<table width=\"400\">
+		<table width=\"490\">
 		<tr>
 			<td align=\"right\" class=\"head\">".$lang['SLOT']."</td>
 			<td align=\"left\" class=\"head\">".$lang['NAME']."</td>

@@ -1,0 +1,38 @@
+0	Aldebaran_Neuschwanstein
+1	Aldebaran_Hohenschwangau
+2	Aldebaran_Nuenberg
+3	Aldebaran_Wuerzburg
+4	Aldebaran_Rothenburg
+5	Geffen_Repherion
+6	Geffen_Eeyolbriggar
+7	Geffen_Yesnelph
+8	Geffen_Bergel
+9	Geffen_Mersetzdeitz
+10	Payon_Bright_Arbor
+11	Payon_Scarlet_Palace
+12	Payon_Holy_Shadow
+13	Payon_Sacred_Altar
+14	Payon_Bamboo_Grove_Hill
+15	Prontera_Kriemhild
+16	Prontera_Swanhild
+17	Prontera_Fadhgridh
+18	Prontera_Skoegul
+19	Prontera_Gondul
+
+//Novice Castles
+20	Novice_Castle_1
+21	Novice_Castle_2
+22	Novice_Castle_3
+23	Novice_Castle_4
+
+//WoE:SE
+24	Schwaltzvalt_Himinn
+25	Schwaltzvalt_Andlangr
+26	Schwaltzvalt_Viblainn
+27	Schwaltzvalt_Hljod
+28	Schwaltzvalt_Skidbladnir
+29	Arunafeltz_Mardol
+30	Arunafeltz_Cyr
+31	Arunafeltz_Horn
+32	Arunafeltz_Gefn
+33	Arunafeltz_Bandis

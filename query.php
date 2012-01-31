@@ -132,6 +132,6 @@ AND (`char`.`class` = '%d' OR `char`.`class` = '%d') AND `login`.`state` != '5' 
 //links.php - Links
 DEFINE('GET_LINKS', "SELECT `name`, `url`, `desc`, `size` FROM `cp_links`");
 //sendmail.php
-DEFINE('SEND_MAIL', "INSERT into `mail` (`send_name`, `dest_name`, `title`, `message`) VALUES ('%s', '%s', '%s', '%s')");
+DEFINE('SEND_MAIL', "INSERT into `mail` (send_name, dest_name, title, message) VALUES ('%s', '%s', '%s', '%s')");
 
 ?>

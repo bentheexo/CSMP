@@ -4,7 +4,7 @@ include_once 'config.php'; // loads config variables
 include_once 'query.php'; // imports queries
 include_once 'functions.php';
 
-if ($CONFIG_disable_account || check_ban())
+if (check_ban())
 	redir("motd.php", "main_div", "Disabled");
 
 if (isset($POST_opt)) {
@@ -17,7 +17,7 @@ if (isset($POST_opt)) {
 		if (strlen($POST_title) < 3 )
 			alert("A better Title is needed");
 
-		$query = sprintf(SEND_MAIL, trim($POST_send_name), trim($POST_dest_name), $POST_title, $POST_message);
+		$query = sprintf(SEND_MAIL, $POST_send_name, $POST_dest_name, $POST_title, $POST_message);
 		$result = execute_query($query, 'sendmail.php');
 
 		if ($line = $result->fetch_row()) {

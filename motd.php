@@ -1,4 +1,8 @@
 <?php
+// As of January 1st this project has changed CeresCP for
+// my distrobution purposes. I have rewritten major componets
+// to fit my needs of the software.
+
 session_start();
 include_once 'config.php'; // loads config variables
 include_once 'query.php'; // imports queries

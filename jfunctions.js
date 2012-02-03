@@ -1,3 +1,7 @@
+// As of January 1st this project has changed CeresCP for
+// my distrobution purposes. I have rewritten major componets
+// to fit my needs of the software.
+
 function LINK_ajax(http, div_name) { //função para links
 
 	var LINK_xmlhttp = false;

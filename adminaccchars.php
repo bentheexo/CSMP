@@ -67,5 +67,5 @@ echo "<div id=\"chars_div\"></div>";
 
 closetable();
 
-fim();
+end();
 ?>

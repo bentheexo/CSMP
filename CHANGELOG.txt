@@ -1,2 +1,4 @@
+2012/02/03 -- BenTheExo
+***Not using this changelog file
 2012/01/26 -- BenTheExo
 ***Re-made Trunk Repo and started move to GIT

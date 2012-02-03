@@ -63,5 +63,5 @@ else
 echo "</table>";
 closetable();
 
-fim();
+end();
 ?>

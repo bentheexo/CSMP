@@ -32,7 +32,7 @@ if (!empty($GET_opt)) {
 
 		$answer=email($accounts);
 
-		erro_de_login(1);
+		login_error(1);
 		redir("motd.php", "main_div", $answer);
 	}
 }
@@ -64,5 +64,5 @@ echo "
 ";
 closetable();
 
-fim();
+end();
 ?>

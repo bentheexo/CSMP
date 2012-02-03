@@ -48,7 +48,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id'])) {
 		</table></form>
 		";
 	closetable();
-	fim();
+	end();
 	}
 }
 redir("motd.php", "main_div", $lang['NEED_TO_LOGIN']);

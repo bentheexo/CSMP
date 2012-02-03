@@ -146,5 +146,5 @@ if (isset($begin)) {
 	closetable();
 }
 
-fim();
+end();
 ?>

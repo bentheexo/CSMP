@@ -67,10 +67,10 @@ if (isset($POST_opt)) {
 		$result = execute_query($query, 'account.php');
 		
 		if ($line = $result->fetch_row()) {
-			erro_de_login(1);
+			login_error(1);
 			redir("motd.php", "main_div", $lang['ACCOUNT_CREATED']);
 		} else {
-			erro_de_login(1);
+			login_error(1);
 			redir("motd.php", "main_div", $lang['ACCOUNT_PROBLEM']);
 		}
 

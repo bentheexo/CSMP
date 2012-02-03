@@ -21,5 +21,5 @@ if ($CONFIG_password_recover) {
 <?php
 }
 
-fim();
+end();
 ?>

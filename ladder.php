@@ -4,8 +4,6 @@ include_once 'config.php'; // loads config variables
 include_once 'query.php'; // imports queries
 include_once 'functions.php';
 
-//if (!empty($_SESSION[$CONFIG_name.'account_id'])) {
-//	if ($_SESSION[$CONFIG_name.'account_id'] > 0) {
 		$jobs = $_SESSION[$CONFIG_name.'jobs'];
 		if (!isset($GET_opt)) {
 			opentable($lang['LADDER_TOP100']);
@@ -138,8 +136,5 @@ include_once 'functions.php';
 		}
 
 //	}
-	fim();
-//}
+	end();
 
-//redir("index.php", "main_div, "You need to be logged to use this page.");
-?>

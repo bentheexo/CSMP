@@ -5,8 +5,6 @@ include_once 'config.php'; // loads config variables
 include_once 'query.php'; // imports queries
 include_once 'functions.php';
 
-//if (!empty($_SESSION[$CONFIG_name.'account_id'])) {
-//	if ($_SESSION[$CONFIG_name.'account_id'] > 0) {
 		$query = sprintf(GUILD_LADDER);
 		$result = execute_query($query, "guild.php");
 
@@ -87,9 +85,5 @@ include_once 'functions.php';
 		}
 		if (isset($emblems))
 			$_SESSION[$CONFIG_name.'emblems'] = $emblems;
-//	}
-	fim();
-//}
-
-//redir("index.php", "main_div", "You need to be logged to use this page.");
+	end();
 ?>

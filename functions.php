@@ -351,7 +351,7 @@ function redir($page, $div, $msg) {
 	opentable("Status");
 	echo "<tr><td><span onClick=\"return LINK_ajax('$page','$div')\"><b>".$msg."</span></tr></td>";
 	closetable();
-	fim();
+	end();
 }
 
 function alert($alertmsg) {
@@ -360,10 +360,10 @@ function alert($alertmsg) {
 	$alertmsg = strtr ($alertmsg, $trans_tbl);
 
 	echo "ALERT|".utf8_encode($alertmsg)."|ENDALERT";
-	fim();
+	end();
 }
 
-function fim() {
+function end() {
 	global $mysql;
 	$mysql->finish();
 	exit(0);
@@ -404,7 +404,7 @@ function read_maildef($file) {
 	return $maildef;
 }
 
-function erro_de_login($i = 0) {
+function login_error($i = 0) {
 	session_destroy();
 	setcookie("login_pass", "", time() - 3600);
 	setcookie("userid", "", time() - 3600);

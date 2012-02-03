@@ -21,10 +21,10 @@ if (isset($POST_opt)) {
 		$result = execute_query($query, 'sendmail.php');
 
 		if ($line = $result->fetch_row()) {
-			erro_de_login(1);
+			login_error(1);
 			redir("motd.php", "main_div", 'Mail Sent Successfully');
 		} else {
-			erro_de_login(1);
+			login_error(1);
 			redir("motd.php", "main_div", 'Mail Not Sent');
 		}
 
@@ -68,7 +68,7 @@ $var = rand(10, 9999999);
 	
 	closetable();
 
-	fim();
+	end();
 
 
 //redir("motd.php", "main_div", $lang['NEED_TO_LOGIN']);

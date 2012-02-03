@@ -47,17 +47,17 @@ if (!empty($POST_opt)) {
 		$bf_check = bf_check_user(trim($POST_username));
 		if ($bf_check > 0) {
 			$msg = sprintf($lang['BLOCKED'], $bf_check);
-			erro_de_login();
+			login_error();
 			alert($msg);
 		}
 
 		if (empty($POST_username) || empty($POST_login_pass)) {
-			erro_de_login();
+			login_error();
 			alert($lang['INCORRECT_CHARACTER']);
 		}
 
 		if (inject($POST_username) || inject($POST_login_pass)) {
-			erro_de_login();
+			login_error();
 			bf_error(trim($POST_username));
 			alert($lang['INCORRECT_CHARACTER']);
 		}
@@ -65,19 +65,19 @@ if (!empty($POST_opt)) {
 		$session = $_SESSION[$CONFIG_name.'sessioncode'];
 		if ($CONFIG_auth_image && function_exists("gd_info")
 			&& strtoupper($POST_code) != substr(strtoupper(md5("Mytext".$session['login'])), 0, 6)) {
-			erro_de_login();
+			login_error();
 			bf_error(trim($POST_username));
 			alert($lang['INCORRECT_CODE']);
 		}
 
 		if (strlen($POST_username) > 23 || strlen($POST_username) < 4) {
-			erro_de_login();
+			login_error();
 			bf_error(trim($POST_username));
 			alert($lang['USERNAME_LENGTH']);
 		}
 
 		if (strlen($POST_login_pass) > 23 || strlen($POST_login_pass) < 4) {
-			erro_de_login();
+			login_error();
 			bf_error(trim($POST_username));
 			alert($lang['PASSWORD_LENGTH_OLD']);
 		}
@@ -99,12 +99,12 @@ if (!empty($POST_opt)) {
 					setcookie("userid", $line[1], time() + 3600 * 24 * 30);
 				}
 			} else {
-				erro_de_login();
+				login_error();
 				bf_error(trim($POST_username));
 				alert($lang['WRONG_USERNAME_PASSWORD']);
 			}
 		} else {
-			erro_de_login();
+			login_error();
 			bf_error(trim($POST_username));
 			alert($lang['WRONG_USERNAME_PASSWORD']);
 		}
@@ -143,7 +143,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id'])) {
 		</td></tr>
 		";
 		closetable();
-		fim();
+		end();
 	}
 }
 
@@ -182,5 +182,5 @@ echo "</table></form>";
 
 closetable();
 
-fim();
+end();
 ?>

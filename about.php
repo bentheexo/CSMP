@@ -117,5 +117,5 @@ echo "
 	}
 echo "</table>";
 closetable();
-fim();
+end();
 ?>

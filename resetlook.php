@@ -107,7 +107,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id']) && $CONFIG_reset_enable) {
 		echo "</table>";
 		closetable();
 	}
-	fim();
+	end();
 }
 
 redir("motd.php", "main_div", $lang['NEED_TO_LOGIN']);

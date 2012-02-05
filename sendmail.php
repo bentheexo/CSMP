@@ -11,6 +11,10 @@ include_once 'functions.php';
 if (check_ban())
 	redir("motd.php", "main_div", "Disabled");
 
+if ($CONFIG_sendmail == 0) {
+		redir("motd.php", "main_div", "Character Mailing is Disabled");
+}
+	
 if (isset($POST_opt)) {
 	if ($POST_opt == 1 && isset($POST_frm_name) && !strcmp($POST_frm_name, "sendmail")) {
 		$session = $_SESSION[$CONFIG_name.'sessioncode'];
@@ -37,7 +41,7 @@ $var = rand(10, 9999999);
 
 	opentable("In Game Character Mailing");
 	
-	echo "
+	echo "<div style=\"width:490px;\">
 	<form id=\"sendmail\" onSubmit=\"return POST_ajax('sendmail.php','main_div','sendmail');\"><table>
 	<tr><td align=\"right\">Senders Name:</td><td align=\"left\">
 	<input type=\"text\" name=\"send_name\" maxlength=\"23\" size=\"23\" onKeyPress=\"return force(this.name,this.form.id,event);\">
@@ -63,6 +67,11 @@ $var = rand(10, 9999999);
 	<tr><td>&nbsp;</td><td><input type=\"submit\" name=\"send\" value=\"Send\"></td></tr>
 	</table></form>
 	";
+	
+	echo "
+	<h1>Instructions</h1>
+	This is used as a substitute mailer for messages only. You must know how to spell the receivers name exactly as it appears in-game.<br>
+	This will not send items, zeny, or any combination of the 2. Use of this system is entirely up to the administrators who installed this.</div>";
 	
 	closetable();
 

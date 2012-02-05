@@ -124,6 +124,7 @@ if (isset($POST_install)) {
 	$buffer .= "\n";
 	$buffer .= "\$CONFIG['md5_pass']		=	'".$POST_sql_md5."';			// Use MD5 password (enable = 1, disable = 0)\n";
 	$buffer .= "\$CONFIG['safe_pass']		=	'".$POST_sql_safe_pass."';			// Force the use of a safer password with size 6 and at least 2 letter and 2 numbers (enable = 1, disable = 0)\n";
+	$buffer .= "\$CONFIG['sendmail']		=	'".$POST_sendmail."';			// Allow use of the Character Mailing System (enable = 1, disable = 0)\n";
 	$buffer .= "\n";
 	$buffer .= "//Admin Area\n";
 	$buffer .= "\$CONFIG['cp_admin']		=	'".$POST_cp_adm_lvl."';			// CP admin functions\n";
@@ -288,6 +289,10 @@ for ($i = 0; isset($idiom[$i]); $i++) {
 									<tr>
 										<td align="left">Safe Pass</td>
 										<td align="left"><select name="sql_safe_pass"><option value="0">No</option><option selected value="1">Yes</option></select></td>
+									</tr>
+									<tr>
+										<td align="left">Character Mailer</td>
+										<td align="left"><select name="sendmail"><option selected value="0">No</option><option value="1">Yes</option></select></td>
 									</tr>
 								</table>
 							</fieldset>

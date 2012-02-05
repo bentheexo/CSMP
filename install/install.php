@@ -134,6 +134,8 @@ if (isset($POST_install)) {
 	$buffer .= "//Optional Configurations\n";
 	$buffer .= "\$CONFIG['sendmail']		=	'".$POST_sendmail."';			// Allow use of the Character Mailing System (enable = 1, disable = 0)\n";
 	$buffer .= "\$CONFIG['v4p']		=	'".$POST_v4p."';			// Allow use of the Character Mailing System (enable = 1, disable = 0)\n";
+	$buffer .= "\$CONFIG['donations']		=	'".$POST_donations."';			// Allow use of the Donation System (enable = 1, disable = 0)\n";
+	$buffer .= "\$CONFIG['mypaypalemail']		=	'".$POST_mypaypalemail."';			// Paypal Email Address\n";
 	$buffer .= "\n";
 	$buffer .= "//Admin Area\n";
 	$buffer .= "\$CONFIG['cp_admin']		=	'".$POST_cp_adm_lvl."';			// CP admin functions\n";

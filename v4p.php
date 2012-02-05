@@ -19,7 +19,7 @@ opentable('Vote for Points');
 ?>
 <center>
 <table width="490"><tr><td>
-<a href="voteforpoints/index.php">Click to be taken to Points Authenticator System</a>
+<a href="voteforpoints/index.php" style="color:blue;">Click to be taken to Points Authenticator System</a>
 </td></tr></table></center>
 <?php
 closetable();

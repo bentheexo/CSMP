@@ -15,11 +15,11 @@ if ($CONFIG_donations == 0) {
 		redir("motd.php", "main_div", "Donations are disabled");
 }
 
-opentable(Donations Panel);
+opentable('Donations Panel');
 ?>
 <center>
 <table width="490"><tr><td>
-<a href="/donations/index.php">Click to be Re-Directed to the Secure Donations Panel</a>
+<a href="donations/index.php" style="color:blue;">Click to be Re-Directed to the Secure Donations Panel</a>
 </td></tr></table></center>
 <?php
 closetable();

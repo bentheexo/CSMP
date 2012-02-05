@@ -93,9 +93,9 @@ if ($CONFIG_reset_look)
 else
 	$submenu[12][2] = -1;
 
-$submenu[13][0] = $lang['MENU_OTHER'];
+$submenu[13][0] = "Send In-Game Mail";
 $submenu[13][1] = "sendmail.php";
-$submenu[13][2] = 5;
+$submenu[13][2] = 1;
 
 $submenu[14][0] = $lang['MENU_LINKS'];
 $submenu[14][1] = "links.php";
@@ -109,13 +109,17 @@ $submenu[16][0] = "Chars";
 $submenu[16][1] = "adminchars.php";
 $submenu[16][2] = 6;
 
-//$submenu[17][0] = "Bans/Blocks";
-//$submenu[17][1] = "";
-//$submenu[17][2] = 6;
-
-$submenu[17][0] = "Send In-Game Mail";
-$submenu[17][1] = "sendmail.php";
+$submenu[17][0] = "Vote 4 Points";
+$submenu[17][1] = "v4p.php";
 $submenu[17][2] = 1;
+
+$submenu[18][0] = "Donations";
+$submenu[18][1] = "donations.php";
+$submenu[18][2] = 1;
+
+$submenu[19][0] = "Donations Admin";
+$submenu[19][1] = "admindonations.php";
+$submenu[19][2] = 6;
 
 $pos = 0;
 $menu = "var mainmenu = new Array(";

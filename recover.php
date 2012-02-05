@@ -68,5 +68,5 @@ echo "
 ";
 closetable();
 
-end();
+ending();
 ?>

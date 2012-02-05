@@ -355,7 +355,7 @@ function redir($page, $div, $msg) {
 	opentable("Status");
 	echo "<tr><td><span onClick=\"return LINK_ajax('$page','$div')\"><b>".$msg."</span></tr></td>";
 	closetable();
-	end();
+	ending();
 }
 
 function alert($alertmsg) {
@@ -364,10 +364,10 @@ function alert($alertmsg) {
 	$alertmsg = strtr ($alertmsg, $trans_tbl);
 
 	echo "ALERT|".utf8_encode($alertmsg)."|ENDALERT";
-	end();
+	ending();
 }
 
-function end() {
+function ending() {
 	global $mysql;
 	$mysql->finish();
 	exit(0);

@@ -348,5 +348,5 @@ echo "<table width=\"490\"><tr><td align=\"center\"><span title=\"Close this win
 
 closetable();
 echo "</body></html>";
-end();
+ending();
 ?>

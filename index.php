@@ -98,5 +98,5 @@ $_SESSION[$CONFIG_name.'jobs'] = readjobs();
 </html>
 
 <?php
-end();
+ending();
 ?>

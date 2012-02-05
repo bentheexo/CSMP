@@ -84,7 +84,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id']) && $CONFIG_money_transfer) {
 					";
 				}
 				closetable();
-				end();
+				ending();
 			}
 			if ($GET_opt == 1) {
 				$query = sprintf(GET_ZENY, $_SESSION[$CONFIG_name.'account_id']);
@@ -144,7 +144,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id']) && $CONFIG_money_transfer) {
 					";
 				}
 				closetable();
-				end();
+				ending();
 			}
 		}
 		$query = sprintf(GET_ZENY, $_SESSION[$CONFIG_name.'account_id']);
@@ -202,7 +202,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id']) && $CONFIG_money_transfer) {
 		}
 		closetable();
 	}
-	end();
+	ending();
 }
 
 redir("motd.php", "main_div", $lang['NEED_TO_LOGIN']);

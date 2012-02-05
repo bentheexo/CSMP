@@ -121,5 +121,5 @@ echo "
 	}
 echo "</table>";
 closetable();
-end();
+ending();
 ?>

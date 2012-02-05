@@ -169,5 +169,5 @@ function sub_menu(index) {
 
 main_menu();
 <?php
-//end();
+//ending();
 ?>

@@ -72,8 +72,6 @@ $var = rand(10, 9999999);
 	
 	closetable();
 
-	end();
+	ending();
 
-
-//redir("motd.php", "main_div", $lang['NEED_TO_LOGIN']);
 ?>

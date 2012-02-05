@@ -47,7 +47,7 @@ $mail->AddReplyTo($CONFIG_smtp_mail,$CONFIG_name);
 
 $mail->IsHTML(true);
 
-if(!$mail->Send()) {
+if(!$mail->Sending()) {
   return $mail->ErrorInfo;
 } else {
   return "Message has been sent";

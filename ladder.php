@@ -140,5 +140,5 @@ include_once 'functions.php';
 		}
 
 //	}
-	end();
+	ending();
 

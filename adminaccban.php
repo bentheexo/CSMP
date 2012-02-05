@@ -169,5 +169,5 @@ if (isset($GET_id)) {
 closetable();
 
 
-end();
+ending();
 ?>

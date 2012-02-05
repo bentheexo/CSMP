@@ -150,5 +150,5 @@ if (isset($begin)) {
 	closetable();
 }
 
-end();
+ending();
 ?>

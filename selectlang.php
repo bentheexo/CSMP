@@ -54,5 +54,5 @@ echo "
 </form>
 ";
 closetable();
-end();
+ending();
 ?>

@@ -107,7 +107,7 @@ if (isset($_SESSION[$CONFIG_name.'emblems'])) {
 			header('Content-Type: image/bitmap');
 			echo $ebm;
 		}
-		end();
+		ending();
 	}
 }
 
@@ -124,6 +124,6 @@ if (function_exists("gd_info")) {
 	header('Content-Type: image/bitmap');
 	echo $data;
 }
-end();
+ending();
 
 ?>

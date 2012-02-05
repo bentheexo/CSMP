@@ -147,7 +147,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id'])) {
 		</td></tr>
 		";
 		closetable();
-		end();
+		ending();
 	}
 }
 
@@ -186,5 +186,5 @@ echo "</table></form>";
 
 closetable();
 
-end();
+ending();
 ?>

@@ -16,5 +16,5 @@ This is the CSMP, Complete Server Management Panel. It will be finished for full
 </td></tr></table></center>
 <?php
 closetable();
-end();
+ending();
 ?>

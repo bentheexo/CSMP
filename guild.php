@@ -89,5 +89,5 @@ include_once 'functions.php';
 		}
 		if (isset($emblems))
 			$_SESSION[$CONFIG_name.'emblems'] = $emblems;
-	end();
+	ending();
 ?>

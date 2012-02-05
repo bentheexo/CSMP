@@ -54,5 +54,5 @@ if ($result) {
 }
 echo "</table>";
 closetable();
-end();
+ending();
 ?>

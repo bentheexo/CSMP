@@ -194,7 +194,7 @@ if (isset($POST_install)) {
 	fwrite($handle, $buffer);
 	fclose($handle);
 
-	echo "Installation Complete. Move config.php to your Control Panel root and delete the install folder.\n";
+	echo "Installation Complete. Delete the install folder.\n";
 	if ($POST_woe_agit)
 		echo "<br>Agit Status: Copy ./install/npc/agit_status.txt to your rag npc folder and enable it.\n";
 	echo "</body></html>";

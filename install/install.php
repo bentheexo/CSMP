@@ -96,6 +96,12 @@ if (isset($POST_install)) {
 
 	$query = "CREATE TABLE `cp_server_status` (`last_checked` datetime NOT NULL default '0000-00-00 00:00:00', `status` tinyint(1) NOT NULL default '0') ENGINE=MyISAM;";
 	$result = mysqli_query($cp_db, $query);
+	
+	$query = "DROP TABLE IF EXISTS `vote_point`;";
+	$result = mysqli_query($rag_db, $query);
+
+	$query = "CREATE TABLE IF NOT EXISTS `vote_point` (`account_id` int(11) NOT NULL default '0', `point` int(11) NOT NULL default '0', `last_vote1` int(11) NOT NULL default '0', `last_vote2` int(11) NOT NULL default '0', `last_vote3` int(11) NOT NULL default '0', `date` text NOT NULL, `last_vote4` int(11) NOT NULL default '0', `ip_address` varchar(100) NOT NULL default '0', `blockendedtime` text NOT NULL, `blockendedtime2` text NOT NULL, `blockendedtime3` text NOT NULL, `blockendedtime4` text NOT NULL, `blockendedtime5` text NOT NULL, `blockendedtime6` text NOT NULL, `blockendedtime7` text NOT NULL, `blockendedtime8` text NOT NULL, `blockendedtime9` text NOT NULL, `blockendedtime10` text NOT NULL, `lastvisit` text NOT NULL, PRIMARY KEY  (`account_id`) ENGINE=MyISAM;";
+	$result = mysqli_query($rag_db, $query);
 
 	if ($POST_woe_agit) {
 		$query = "DROP TABLE IF EXISTS `ragsrvinfo`;";
@@ -124,7 +130,10 @@ if (isset($POST_install)) {
 	$buffer .= "\n";
 	$buffer .= "\$CONFIG['md5_pass']		=	'".$POST_sql_md5."';			// Use MD5 password (enable = 1, disable = 0)\n";
 	$buffer .= "\$CONFIG['safe_pass']		=	'".$POST_sql_safe_pass."';			// Force the use of a safer password with size 6 and at least 2 letter and 2 numbers (enable = 1, disable = 0)\n";
+	$buffer .= "\n";
+	$buffer .= "//Optional Configurations\n";
 	$buffer .= "\$CONFIG['sendmail']		=	'".$POST_sendmail."';			// Allow use of the Character Mailing System (enable = 1, disable = 0)\n";
+	$buffer .= "\$CONFIG['v4p']		=	'".$POST_v4p."';			// Allow use of the Character Mailing System (enable = 1, disable = 0)\n";
 	$buffer .= "\n";
 	$buffer .= "//Admin Area\n";
 	$buffer .= "\$CONFIG['cp_admin']		=	'".$POST_cp_adm_lvl."';			// CP admin functions\n";
@@ -290,9 +299,22 @@ for ($i = 0; isset($idiom[$i]); $i++) {
 										<td align="left">Safe Pass</td>
 										<td align="left"><select name="sql_safe_pass"><option value="0">No</option><option selected value="1">Yes</option></select></td>
 									</tr>
+								</table>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<fieldset>
+								<legend><b>Optional Configurations</b></legend>
+								<table>
 									<tr>
 										<td align="left">Character Mailer</td>
 										<td align="left"><select name="sendmail"><option selected value="0">No</option><option value="1">Yes</option></select></td>
+									</tr>
+									<tr>
+										<td align="left">Vote For Points</td>
+										<td align="left"><select name="v4p"><option selected value="0">No</option><option value="1">Yes</option></select></td>
 									</tr>
 								</table>
 							</fieldset>

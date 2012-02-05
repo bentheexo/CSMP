@@ -13,7 +13,11 @@ $CONFIG['cp_db']			=	'cp';			// SQL CP Database name
 
 $CONFIG['md5_pass']		=	'0';			// Use MD5 password (enable = 1, disable = 0)
 $CONFIG['safe_pass']		=	'1';			// Force the use of a safer password with size 6 and at least 2 letter and 2 numbers (enable = 1, disable = 0)
+
+//Optional Configurations
 $CONFIG['sendmail']		=	'1';			// Allow use of the Character Mailing System (enable = 1, disable = 0)
+$CONFIG['v4p']			=	'1';			// Allow the use of the Vote 4 Points Script (enable = 1, disable = 0)
+$CONFIG['mypaypalemail']	=	'test@test.com';	//Put your PayPal Email Address here
 
 //Admin Area
 $CONFIG['cp_admin']		=	'99';			// CP admin functions

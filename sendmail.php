@@ -12,39 +12,33 @@ if (check_ban())
 	redir("motd.php", "main_div", "Disabled");
 
 if (isset($POST_opt)) {
-	if ($POST_opt == 1 && isset($POST_frm_name) && !strcmp($POST_frm_name, "send_mail")) {
+	if ($POST_opt == 1 && isset($POST_frm_name) && !strcmp($POST_frm_name, "sendmail")) {
 		$session = $_SESSION[$CONFIG_name.'sessioncode'];
 		if ($CONFIG_auth_image && function_exists("gd_info")
-			&& strtoupper($POST_code) != substr(strtoupper(md5("Mytext".$session['send_mail'])), 0,6))
+			&& strtoupper($POST_code) != substr(strtoupper(md5("Mytext".$session['sendmail'])), 0,6))
 			alert($lang['INCORRECT_CODE']);
 
 		if (strlen($POST_title) < 3 )
 			alert("A better Title is needed");
 
-		$query = sprintf(SEND_MAIL, $POST_send_name, $POST_dest_name, $POST_title, $POST_message);
+		$query = sprintf(SENDMAIL, $POST_send_name, $POST_dest_name, $POST_title, $POST_message);
 		$result = execute_query($query, 'sendmail.php');
 
-		if ($line = $result->fetch_row()) {
-			login_error(1);
-			redir("motd.php", "main_div", 'Mail Sent Successfully');
-		} else {
-			login_error(1);
-			redir("motd.php", "main_div", 'Mail Not Sent');
-		}
 
+		redir("motd.php", "main_div", 'Mail Sent Successfully');
 	}
 }
 
 if (isset($_SESSION[$CONFIG_name.'sessioncode']))
 	$session = $_SESSION[$CONFIG_name.'sessioncode'];
-$session['send_mail'] = rand(12345, 99999);
+$session['sendmail'] = rand(12345, 99999);
 $_SESSION[$CONFIG_name.'sessioncode'] = $session;
 $var = rand(10, 9999999);
 
 	opentable("In Game Character Mailing");
 	
 	echo "
-	<form id=\"account\" onSubmit=\"return POST_ajax('sendmail.php','main_div','send_mail');\"><table>
+	<form id=\"sendmail\" onSubmit=\"return POST_ajax('sendmail.php','main_div','sendmail');\"><table>
 	<tr><td align=\"right\">Senders Name:</td><td align=\"left\">
 	<input type=\"text\" name=\"send_name\" maxlength=\"23\" size=\"23\" onKeyPress=\"return force(this.name,this.form.id,event);\">
 	</td></tr>

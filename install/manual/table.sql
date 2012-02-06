@@ -98,4 +98,4 @@ CREATE TABLE IF NOT EXISTS `cash_points` (
   `account_id` int(11) NOT NULL,
   `points_to_add` int(11) NOT NULL DEFAULT '0',
   UNIQUE KEY `account_id` (`account_id`)
-)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8-unicode_ci;

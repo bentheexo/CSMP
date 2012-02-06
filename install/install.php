@@ -102,7 +102,31 @@ if (isset($POST_install)) {
 
 	$query = "CREATE TABLE IF NOT EXISTS `vote_point` (`account_id` int(11) NOT NULL default '0', `point` int(11) NOT NULL default '0', `last_vote1` int(11) NOT NULL default '0', `last_vote2` int(11) NOT NULL default '0', `last_vote3` int(11) NOT NULL default '0', `date` text NOT NULL, `last_vote4` int(11) NOT NULL default '0', `ip_address` varchar(100) NOT NULL default '0', `blockendedtime` text NOT NULL, `blockendedtime2` text NOT NULL, `blockendedtime3` text NOT NULL, `blockendedtime4` text NOT NULL, `blockendedtime5` text NOT NULL, `blockendedtime6` text NOT NULL, `blockendedtime7` text NOT NULL, `blockendedtime8` text NOT NULL, `blockendedtime9` text NOT NULL, `blockendedtime10` text NOT NULL, `lastvisit` text NOT NULL, PRIMARY KEY  (`account_id`) ENGINE=MyISAM;";
 	$result = mysqli_query($rag_db, $query);
-
+	
+	$query = "DROP TABLE IF EXSISTS `dc_comments`;";
+	$result = mysqli_query($rag_db, $query);
+	
+	$query = "CREATE TABLE IF NOT EXISTS `dc_comments` ( `id` int(10) unsigned NOT NULL auto_increment, `transaction_id` varchar(64) collate utf8_unicode_ci NOT NULL default '', `name` varchar(128) collate utf8_unicode_ci NOT NULL default '', `amount` varchar(255) collate utf8_unicode_ci NOT NULL default '', `account_id` int(11) NOT NULL, `dt` timestamp NOT NULL default CURRENT_TIMESTAMP, PRIMARY KEY  (`id`), UNIQUE KEY `transaction_id` (`transaction_id`) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+	$result = mysqli_query($rag_db, $query);
+	
+	$query = "DROP TABLE IF EXSISTS `dc_donations`;";
+	$result = mysqli_query($rag_db, $query);
+	
+	$query = "CREATE TABLE IF NOT EXISTS `dc_donations` ( `transaction_id` varchar(64) collate utf8_unicode_ci NOT NULL default '', `donor_email` varchar(255) collate utf8_unicode_ci NOT NULL default '', `amount` double NOT NULL default '0', `account_id` int(11) NOT NULL, `original_request` text collate utf8_unicode_ci NOT NULL`dt` timestamp NOT NULL default CURRENT_TIMESTAMP, PRIMARY KEY  (`transaction_id`) ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+	$result = mysqli_query($rag_db, $query);
+	
+	$query = "DROP TABLE IF EXSISTS `dc_subscription`;";
+	$result = mysqli_query($rag_db, $query);
+	
+	$query = "CREATE TABLE IF NOT EXISTS `dc_Subscription` ( `transaction_id` varchar(64) collate utf8_unicode_ci NOT NULL default '', `donor_email` varchar(255) collate utf8_unicode_ci NOT NULL default '', `amount` varchar(255) collate utf8_unicode_ci NOT NULL default '', `account_id` int(11) NOT NULL, `original_request` text collate utf8_unicode_ci NOT NULL, `dt` timestamp NOT NULL default CURRENT_TIMESTAMP, PRIMARY KEY  (`transaction_id`) ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+	$result = mysqli_query($rag_db, $query);
+	
+	$query = "DROP TABLE IF EXSISTS `cash_points`;";
+	$result = mysqli_query($rag_db, $query);
+	
+	$query = "CREATE TABLE IF NOT EXISTS `cash_points` ( `account_id` int(11) NOT NULL, `points_to_add` int(11) NOT NULL DEFAULT '0', UNIQUE KEY `account_id` (`account_id`))";
+	$result = mysqli_query($rag_db, $query);
+	
 	if ($POST_woe_agit) {
 		$query = "DROP TABLE IF EXISTS `ragsrvinfo`;";
 		$result = mysqli_query($rag_db, $query)
@@ -317,6 +341,14 @@ for ($i = 0; isset($idiom[$i]); $i++) {
 									<tr>
 										<td align="left">Vote For Points</td>
 										<td align="left"><select name="v4p"><option selected value="0">No</option><option value="1">Yes</option></select></td>
+									</tr>
+									<tr>
+										<td align="left">Donations</td>
+										<td align="left"><select name="sendmail"><option selected value="0">No</option><option value="1">Yes</option></select></td>
+									</tr>
+									<tr>
+										<td align="left">Donations Paypal Email</td>
+										<td align="left"><input type="text" name="mypaypalemail" size="30" value="paypalemail@your-ro.com"></td>
 									</tr>
 								</table>
 							</fieldset>

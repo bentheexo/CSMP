@@ -37,9 +37,9 @@ if (!empty($_SESSION[$CONFIG_name.'account_id']) && $CONFIG_money_transfer) {
 				$more = $zeny2 + $GET_zeny;
 				if ($less < 0)
 					alert("Not enough zeny.");
-				if ($less > 999999999)
+				if ($less > 2000000000)
 					redir("motd.php", "main_div", $lang['MONEY_OPER_IMPOSSIBLE']);
-				if ($more > 999999999)
+				if ($more > 2000000000)
 					redir("motd.php", "main_div", $lang['MONEY_OPER_IMPOSSIBLE']);
 
 				$query = sprintf(SET_ZENY, $less, $GET_GID1, $_SESSION[$CONFIG_name.'account_id']);
@@ -116,7 +116,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id']) && $CONFIG_money_transfer) {
 						<td align=\"right\">$zeny</td>
 						<td>
 						";
-						if ($clevel >= 20) {
+						if ($clevel >= 10) {
 							echo "
 							<form id=\"money$slot\" onsubmit=\"return GET_ajax('money.php','main_div','money$slot')\">
 									<input type=\"submit\" value=\"select\">
@@ -175,7 +175,7 @@ if (!empty($_SESSION[$CONFIG_name.'account_id']) && $CONFIG_money_transfer) {
 				<td align=\"right\">$zeny</td>
 				<td>
 			";
-			if ($clevel >= 20) {
+			if ($clevel >= 10) {
 				echo "
 					<form id=\"money$slot\" onsubmit=\"return GET_ajax('money.php','main_div','money$slot')\">
 						<input type=\"submit\" value=\"select\">

@@ -1,6 +1,5 @@
 #! /bin/sh
 #SVN Checkout Script
 
-su csmp
-cd ~
-svn co https://rathena.svn.sourceforge.net/svnroot/rathena/trunk /
+#Maybe change it to offer more sources, but for now
+svn co https://rathena.svn.sourceforge.net/svnroot/rathena/trunk /opt/csmp/admin/server

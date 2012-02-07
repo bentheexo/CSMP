@@ -2,5 +2,5 @@
 #SVN Update Script
 
 su csmp
-cd ~
+cd /opt/csmp/admin/server
 svn up

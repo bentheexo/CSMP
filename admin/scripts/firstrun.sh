@@ -1,11 +1,6 @@
 #! /bin/sh
 # First run script for Debian, Ubuntu, CentOS, or Fedora
 
-
-useradd -D -b /opt -d csmp/admin/server -g root csmp
-
-su csmp
-
 if [ -f /etc/redhat-release ] #CentOS for sure, maybe Fedora
 then
 	if `uname -i` == i386
@@ -30,4 +25,12 @@ elif [ -f /etc/debian_version
 then
 apt-get update && apt-get install libmysqlclient16-dev libpcre3-dev zlib1g-dev subversion gcc-4.5 make cmake automake git-all
 echo "System Pre-requisites have all been met"
+if [ `id -u` == 0 ]
+then
+useradd -d /opt/csmp/ -m -g root csmp
+su csmp
+sh svnco.sh
+echo "SVN Checkout has completed. You have the latest rAthena Revision."
+sh compile.sh
+echo "Your rAthena has been compiled with default settings. Please edit the source code to your liking and then run the Compiler again."
 fi

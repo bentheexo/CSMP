@@ -1,6 +1,3 @@
 <?php
-	$dbaddress = "";
-	$dbusername = "";
-	$dbpassword = "";
-	$dbschema = "databasename";
+require($_SERVER['DOCUMENT_ROOT'] . '/csmp/config.php');
 ?>

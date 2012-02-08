@@ -2,8 +2,8 @@
 <?php
 //DB CONNECTIONS
 include ('connection.php');
-$con = mysql_connect ($dbaddress,$dbusername,$dbpassword) or die('Error'. mysql_error());
-$dbs = mysql_select_db($dbschema);
+$con = mysql_connect ($CONFIG_rag_serv,$CONFIG_rag_user,$CONFIG_rag_pass) or die('Error'. mysql_error());
+$dbs = mysql_select_db($CONFIG_rag_db);
 $user = $_POST['username'];
 if($user=="")
 {

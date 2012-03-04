@@ -344,7 +344,7 @@ for ($i = 0; isset($idiom[$i]); $i++) {
 									</tr>
 									<tr>
 										<td align="left">Donations</td>
-										<td align="left"><select name="sendmail"><option selected value="0">No</option><option value="1">Yes</option></select></td>
+										<td align="left"><select name="donations"><option selected value="0">No</option><option value="1">Yes</option></select></td>
 									</tr>
 									<tr>
 										<td align="left">Donations Paypal Email</td>

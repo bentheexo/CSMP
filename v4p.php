@@ -12,42 +12,22 @@ if (check_ban())
 	redir("motd.php", "main_div", "Disabled");
 
 if ($CONFIG_v4p == 0) {
-		redir("motd.php", "main_div", "Voting for Points is disabled");
+		redir("motd.php", "main_div", "Voting for Points has been disabled");
 }
 
-$site = $_GET['site'];
-$link = unserialize(VOTE_LINK);
-
-if( !isset($site) || !isset($link[ $site ]) )
-	header( 'Location: index.php' );
-else if( !isset($_SESSION[$CONFIG_name.'account_id']) )
-	votes();
-else {
-	$result = execute_query("SELECT `point`, `last_vote".$site."` FROM `vote_point` WHERE `account_id` = '".$_SESSION[$CONFIG_name.'account_id']."' LIMIT 0,1", "vote.php");
-	if( $result->count() > 0 ) {
-		$row = $result->fetch_row();
-
-		if( ( time() - $row[ 1 ] ) > (60 * 60 * $CONFIG_VOTE_TIME) )
-			execute_query("UPDATE `vote_point` SET `point` = ".($row[0] + 1)." , `last_vote".$site."` = '".time()."', `date` = '".date("d.m.y H:i")."' WHERE `account_id` = '".$_SESSION[$CONFIG_name.'account_id']."'", "vote.php");
-		votes();
-	} else {
-		execute_query("INSERT INTO `vote_point` ( `account_id` , `point` , `last_vote".$site."` , `date` ) VALUES ( '".$_SESSION[$CONFIG_name.'account_id']."' , 1 , '".time()."' , '".date("d.m.y H:i")."')", "vote.php");
-		votes();
-	}
-}
-
-
-
-function votes() {
-	global $site, $link;
-
-	if( isset($link[ $site ]) )
-		header( 'Location: '.$link[ $site ] ); 
-	else
-		header( 'Location: index.php' );
-	die();
-}
-
-
-
+opentable('Voting for Points');
+?>
+<center>
+<table width="490"><tr><td>
+<a href="vote.php?site=1" target='_blank' style="color:blue;">Voting Link 1</a>
+</td></tr>
+<tr><td>
+<a href="vote.php?site=2" target='_blank' style="color:blue;">Voting Link 2</a>
+</td></tr>
+<tr><td>
+<a href="vote.php?site=3" target='_blank' style="color:blue;">Voting Link 3</a>
+</td></tr></table></center>
+<?php
+closetable();
+ending();
 ?>

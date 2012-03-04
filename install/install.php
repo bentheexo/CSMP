@@ -159,12 +159,12 @@ if (isset($POST_install)) {
 	$buffer .= "\$CONFIG['sendmail']		=	'".$POST_sendmail."';			// Allow use of the Character Mailing System (enable = 1, disable = 0)\n";
 	$buffer .= "\$CONFIG['v4p']		=	'".$POST_v4p."';			// Allow use of the Character Mailing System (enable = 1, disable = 0)\n";
 	$buffer .= "\$CONFIG['VOTE_TIME']	=	'".$POST_VOTE_TIME."';	// Standard Vote Time\n";
-	$buffer .= "define ('VOTE_LINK', serialize (array ( 
-                                        1 => '".$POST_vote_link_1"', 
-                                        2 => '".$POST_vote_link_2"',
-                                        3 => '".$POST_vote_link_3"' 
+	$buffer .= "define ('VOTE_LINK', serialize(array(
+                                        1 => '".$POST_vote_link_1."',\n
+                                        2 => '".$POST_vote_link_2."',\n
+                                        3 => '".$POST_vote_link_3."'\n 
                             )) 
-        );";
+        );\n";
 	$buffer .= "\$CONFIG['donations']		=	'".$POST_donations."';			// Allow use of the Donation System (enable = 1, disable = 0)\n";
 	$buffer .= "\$CONFIG['mypaypalemail']		=	'".$POST_mypaypalemail."';			// Paypal Email Address\n";
 	$buffer .= "\n";

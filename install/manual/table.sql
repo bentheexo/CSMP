@@ -40,28 +40,15 @@ CREATE TABLE `cp_server_status` (
   `status` tinyint(1) NOT NULL default '0'
 ) ENGINE=MyISAM;
 
-CREATE TABLE IF NOT EXISTS `vote_point` (
-  `account_id` int(11) NOT NULL default '0',
-  `point` int(11) NOT NULL default '0',
-  `last_vote1` int(11) NOT NULL default '0',
-  `last_vote2` int(11) NOT NULL default '0',
-  `last_vote3` int(11) NOT NULL default '0',
-  `date` text NOT NULL,
-  `last_vote4` int(11) NOT NULL default '0',
-  `ip_address` varchar(100) NOT NULL default '0',
-  `blockendedtime` text NOT NULL,
-  `blockendedtime2` text NOT NULL,
-  `blockendedtime3` text NOT NULL,
-  `blockendedtime4` text NOT NULL,
-  `blockendedtime5` text NOT NULL,
-  `blockendedtime6` text NOT NULL,
-  `blockendedtime7` text NOT NULL,
-  `blockendedtime8` text NOT NULL,
-  `blockendedtime9` text NOT NULL,
-  `blockendedtime10` text NOT NULL,
-  `lastvisit` text NOT NULL,
-  PRIMARY KEY  (`account_id`)
-) ENGINE=MyISAM;
+CREATE TABLE `vote_point` (
+	  `account_id` int(11) NOT NULL default '0',
+	  `point` int(11) NOT NULL default '0',
+	  `last_vote1` int(11) NOT NULL default '0',
+	  `last_vote2` int(11) NOT NULL default '0',
+	  `last_vote3` int(11) NOT NULL default '0',
+	  `date` text NOT NULL,
+	  PRIMARY KEY  (`account_id`)
+	) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `dc_comments` (
   `id` int(10) unsigned NOT NULL auto_increment,

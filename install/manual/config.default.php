@@ -17,6 +17,13 @@ $CONFIG['safe_pass']		=	'1';			// Force the use of a safer password with size 6 
 //Optional Configurations
 $CONFIG['sendmail']		=	'1';			// Allow use of the Character Mailing System (enable = 1, disable = 0)
 $CONFIG['v4p']			=	'1';			// Allow the use of the Vote 4 Points Script (enable = 1, disable = 0)
+$CONFIG['VOTE_TIME']	=	'24'; 
+define ('VOTE_LINK', serialize (array ( 
+                                        1 => 'http://www.voteseite1.com?id=123456', 
+                                        2 => 'http://www.voteseite2.com?id=123456', 
+                                        3 => 'http://www.voteseite3.com?id=123456' 
+                            )) 
+        );
 $CONFIG['mypaypalemail']	=	'test@test.com';	//Put your PayPal Email Address here
 
 //Admin Area

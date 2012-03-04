@@ -100,7 +100,7 @@ if (isset($POST_install)) {
 	$query = "DROP TABLE IF EXISTS `vote_point`;";
 	$result = mysqli_query($rag_db, $query);
 
-	$query = "CREATE TABLE IF NOT EXISTS `vote_point` (`account_id` int(11) NOT NULL default '0', `point` int(11) NOT NULL default '0', `last_vote1` int(11) NOT NULL default '0', `last_vote2` int(11) NOT NULL default '0', `last_vote3` int(11) NOT NULL default '0', `date` text NOT NULL, `last_vote4` int(11) NOT NULL default '0', `ip_address` varchar(100) NOT NULL default '0', `blockendedtime` text NOT NULL, `blockendedtime2` text NOT NULL, `blockendedtime3` text NOT NULL, `blockendedtime4` text NOT NULL, `blockendedtime5` text NOT NULL, `blockendedtime6` text NOT NULL, `blockendedtime7` text NOT NULL, `blockendedtime8` text NOT NULL, `blockendedtime9` text NOT NULL, `blockendedtime10` text NOT NULL, `lastvisit` text NOT NULL, PRIMARY KEY  (`account_id`) ENGINE=MyISAM;";
+	$query = "CREATE TABLE `vote_point` (`account_id` int(11) NOT NULL default '0',`point` int(11) NOT NULL default '0',`last_vote1` int(11) NOT NULL default '0',`last_vote2` int(11) NOT NULL default '0',`last_vote3` int(11) NOT NULL default '0',`date` text NOT NULL,PRIMARY KEY  (`account_id`)) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
 	$result = mysqli_query($rag_db, $query);
 	
 	$query = "DROP TABLE IF EXSISTS `dc_comments`;";
@@ -158,6 +158,13 @@ if (isset($POST_install)) {
 	$buffer .= "//Optional Configurations\n";
 	$buffer .= "\$CONFIG['sendmail']		=	'".$POST_sendmail."';			// Allow use of the Character Mailing System (enable = 1, disable = 0)\n";
 	$buffer .= "\$CONFIG['v4p']		=	'".$POST_v4p."';			// Allow use of the Character Mailing System (enable = 1, disable = 0)\n";
+	$buffer .= "\$CONFIG['VOTE_TIME']	=	'".$POST_VOTE_TIME."';	// Standard Vote Time\n";
+	$buffer .= "define ('VOTE_LINK', serialize (array ( 
+                                        1 => '".$POST_vote_link_1"', 
+                                        2 => '".$POST_vote_link_2"',
+                                        3 => '".$POST_vote_link_3"' 
+                            )) 
+        );";
 	$buffer .= "\$CONFIG['donations']		=	'".$POST_donations."';			// Allow use of the Donation System (enable = 1, disable = 0)\n";
 	$buffer .= "\$CONFIG['mypaypalemail']		=	'".$POST_mypaypalemail."';			// Paypal Email Address\n";
 	$buffer .= "\n";
@@ -343,8 +350,24 @@ for ($i = 0; isset($idiom[$i]); $i++) {
 										<td align="left"><select name="v4p"><option selected value="0">No</option><option value="1">Yes</option></select></td>
 									</tr>
 									<tr>
+										<td align="left">Vote For Points Wait Time</td>
+										<td align="left"><input type="text" name="VOTE_TIME" size="3" value="24"></td>
+									</tr>
+									<tr>
+										<td align="left">Vote For Points Link 1</td>
+										<td align="left"><input type="text" name="vote_link_3" size="50" value="http://gtop100.com"></td>
+									</tr>
+									<tr>
+										<td align="left">Vote For Points Link 2</td>
+										<td align="left"><input type="text" name="vote_link_3" size="50" value="http://xtremetop100.com"></td>
+									</tr>
+									<tr>
+										<td align="left">Vote For Points Link 3</td>
+										<td align="left"><input type="text" name="vote_link_3" size="50" value="http://mmorpg100.com"></td>
+									</tr>
+									<tr>
 										<td align="left">Donations</td>
-										<td align="left"><select name="donations"><option selected value="0">No</option><option value="1">Yes</option></select></td>
+										<td align="left"><select name="sendmail"><option selected value="0">No</option><option value="1">Yes</option></select></td>
 									</tr>
 									<tr>
 										<td align="left">Donations Paypal Email</td>

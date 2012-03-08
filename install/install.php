@@ -355,11 +355,11 @@ for ($i = 0; isset($idiom[$i]); $i++) {
 									</tr>
 									<tr>
 										<td align="left">Vote For Points Link 1</td>
-										<td align="left"><input type="text" name="vote_link_3" size="50" value="http://gtop100.com"></td>
+										<td align="left"><input type="text" name="vote_link_1" size="50" value="http://gtop100.com"></td>
 									</tr>
 									<tr>
 										<td align="left">Vote For Points Link 2</td>
-										<td align="left"><input type="text" name="vote_link_3" size="50" value="http://xtremetop100.com"></td>
+										<td align="left"><input type="text" name="vote_link_2 size="50" value="http://xtremetop100.com"></td>
 									</tr>
 									<tr>
 										<td align="left">Vote For Points Link 3</td>
@@ -367,7 +367,7 @@ for ($i = 0; isset($idiom[$i]); $i++) {
 									</tr>
 									<tr>
 										<td align="left">Donations</td>
-										<td align="left"><select name="sendmail"><option selected value="0">No</option><option value="1">Yes</option></select></td>
+										<td align="left"><select name="donations"><option selected value="0">No</option><option value="1">Yes</option></select></td>
 									</tr>
 									<tr>
 										<td align="left">Donations Paypal Email</td>
